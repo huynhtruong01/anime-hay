@@ -17,6 +17,27 @@ body {
   color: rgb(220 38 38);
 }
 
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+input {
+  display: block;
+  transition: 0.2s ease-in-out;
+}
+
+button {
+  @apply inline-flex justify-center items-center ease-in-out duration-200;
+}
+
+p {
+  @apply leading-relaxed;
+}
+
+/* Scrollbar */
+
 ::-webkit-scrollbar {
   width: 8px;
 }

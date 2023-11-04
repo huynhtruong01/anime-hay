@@ -12,6 +12,15 @@ export default {
   ],
   theme: {
     extend: {},
+    screens: {
+      xs: "0",
+      sm: "321px",
+      md: "376px",
+      lg: "426px",
+      xl: "769px",
+      "2xl": "1025px",
+      "3xl": "1441px",
+    },
   },
   plugins: [],
 }

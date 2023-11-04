@@ -8,13 +8,21 @@
         </svg>
     </div>
 </template>
-
+  
 <script setup lang="ts">
-import { twMerge } from 'tailwind-merge'
-const { isLoading, className } = defineProps<{
-    isLoading: boolean,
-    className?: string
-}>()
+import { twMerge } from "tailwind-merge"
+defineProps({
+    isLoading: {
+        type: Boolean,
+        required: true,
+    },
+    className: {
+        type: String,
+        required: false,
+        default: "",
+    },
+})
 </script>
-
+  
 <style scoped></style>
+  

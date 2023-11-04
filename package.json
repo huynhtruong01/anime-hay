@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
+    "qs": "^6.11.2",
     "tailwind-merge": "^1.14.0"
   }
 }
