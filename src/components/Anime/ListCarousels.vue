@@ -1,5 +1,5 @@
 <template>
-    <div :class="className">
+    <div :class="className" v-if="animeList.length">
         <Container>
             <div class="flex items-center justify-between mb-6">
                 <h3 class="border-l-4 border-red-600 pl-4 text-xl font-bold">
@@ -40,11 +40,12 @@ const { title, url, link } = defineProps({
 })
 
 const animeList: Ref<IAnime[]> = ref([])
-const { list } = await useListFetch(url, {
+const { data } = await useListFetch<IAnime>(url, {
     page: 0,
     limit: 5,
 })
-animeList.value = list.value
+
+animeList.value = data.value.data
 </script>
   
 <style scoped></style>

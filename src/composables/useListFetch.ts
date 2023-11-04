@@ -1,9 +1,10 @@
 import type { IParams, IRespond } from "../models"
 
-export const useListFetch = async (path: string, params?: Partial<IParams>) => {
-  const list: Ref<any[]> = ref([])
-
-  const { data, pending, error } = await useFetch<IRespond<any>>(
+export const useListFetch = async <T>(
+  path: string,
+  params?: Partial<IParams>
+) => {
+  const { data, pending, error } = await useFetch<IRespond<T>>(
     `https://api.jikan.moe/v4${path}`,
     {
       query: {
@@ -12,7 +13,6 @@ export const useListFetch = async (path: string, params?: Partial<IParams>) => {
       },
     }
   )
-  list.value = data.value?.data || []
 
-  return { list, data, pending, error }
+  return { data, pending, error }
 }
